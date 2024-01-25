@@ -8,7 +8,6 @@ export default async (req,res)=>{
     
     try {
         let questionId=req.params.queId;
-        console.log(req.body.option);
         nanoid();
         let question= await questionCollection.findOne({_id:questionId})
         if(question){
@@ -17,13 +16,15 @@ export default async (req,res)=>{
 
             question.options.push(option);
             question.save();
-            console.log(option)
+            res.status(201).send("Option created Sucessfully.");
         }else{
-            res.send("Question not found.")
+            res.status(404).send("Question not found.")
         }
-        res.send("Option created Sucessfully.");
     } catch (error) {
-        
+        res.satus(500).json({
+            message:" Error in Creating Option"
+        })
+        console.log(" Error in Creating Option, Server side Error ",error);
     }
 
 }
