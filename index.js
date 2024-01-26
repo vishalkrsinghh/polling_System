@@ -12,7 +12,9 @@ let app= express();
 app.use(express.urlencoded());
 app.use(express.json());
 
-
+app.get("/",(req,res)=>{
+    res.send("Polling System Api.")
+})
 app.use("/questions",routes )
 app.use("/options", routes2)
 
