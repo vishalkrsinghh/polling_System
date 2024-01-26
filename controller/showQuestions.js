@@ -1,6 +1,7 @@
 
 import questionCollection from "../model/questions.js"
 
+// controller for showing questions with it's all options.
 export default async (req,res)=>{
 
     try {
@@ -15,6 +16,6 @@ export default async (req,res)=>{
         res.satus(500).json({
             message:" Error in finding question"
         })
-        console.log(" Error in finding question, Server Side error", error)
+        // console.log(" Error in finding question, Server Side error", error)
     }
 }
