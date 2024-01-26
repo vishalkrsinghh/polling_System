@@ -12,7 +12,7 @@ export default async (req,res)=>{
         let question= await questionCollection.findOne({_id:questionId})
         if(question){
             let idd=nanoid();   // use to create a unique id
-            let option=await optionCollection.create({option:req.body.option,idd:idd,question:question._id,votes_Count:0,Link_To_Vote:`http://127.0.0.1:4000/options/${idd}/add_vote`})
+            let option=await optionCollection.create({option:req.body.option,idd:idd,question:question._id,votes_Count:0,Link_To_Vote:`https://pollingsystem-bn2o.onrender.com/options/${idd}/add_vote`})
 
             question.options.push(option);
             question.save();
