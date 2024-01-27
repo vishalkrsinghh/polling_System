@@ -9,7 +9,7 @@ export default async (req,res)=>{
         let question=await questionCollection.create(req.body);
         res.status(201).send("Question Created Successfully in Db");
     } catch (error) {
-        res.satus(500).json({      
+        res.status(500).json({      
             message:" Error in Creating question"
         })
         // console.log("error in creating question, Server Side error", error)

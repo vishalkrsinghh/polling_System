@@ -21,7 +21,7 @@ export default async (req,res)=>{
             res.status(404).send("Question not found.")
         }
     } catch (error) {
-        res.satus(500).json({
+        res.status(500).json({
             message:" Error in Creating Option"
         })
         // console.log(" Error in Creating Option, Server side Error ",error);

@@ -13,7 +13,7 @@ export default async (req,res)=>{
             res.status(404).send("Question Not Found")
         }
     } catch (error) {
-        res.satus(500).json({
+        res.status(500).json({
             message:" Error in finding question"
         })
         // console.log(" Error in finding question, Server Side error", error)

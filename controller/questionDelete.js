@@ -20,7 +20,7 @@ export default async (req,res)=>{
             res.status(404).send("Question not found.")
         }
     } catch (error) {
-        res.satus(500).json({
+        res.status(500).json({
             message:" Error in deleting question"
         })
         // console.log(" Error in Deleting Question, Server side Error ",error);
